@@ -9,7 +9,7 @@ data = read_data()
 features = get_features(data)
 data = data[features+ ["SK_ID_CURR", "TARGET"]].copy()
 
-model = load_model(path="data/best_lr_t.pkl")
+model = load_model()
 
 #score = model.predict_proba(data.loc[data['SK_ID_CURR']==100700, features].values)
 #print(score)
