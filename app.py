@@ -37,7 +37,7 @@ def get_score():
         score = pd.DataFrame(data=[-1], columns=["score"])
     else:
         score = pd.DataFrame(data=[int(model.predict(X_sc[idx])[0])], columns=["score"])
-  
+
     return jsonify( json.loads(score.to_json()) )
 
 # Putting ids in dictionary (json file)
@@ -69,3 +69,4 @@ def id_data():  # selected_id
 ##########################
 if __name__ == "__main__":
     app.run()
+
