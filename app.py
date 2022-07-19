@@ -8,6 +8,7 @@ import json
 data = read_data()
 features = get_features(data)
 data = data[features+ ["SK_ID_CURR", "TARGET"]].copy()
+data = data.reset_index(drop=True)
 
 model = load_model()
 
