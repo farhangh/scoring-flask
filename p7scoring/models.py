@@ -2,7 +2,7 @@ import pickle
 import pandas as pd
 
 def read_data(path="data/p7_data.csv"):
-    return pd.read_csv(path)
+    return pd.read_csv(path).reset_index(drop=True)
 
 def load_model(path="data/best_lr_t.pkl"):
     with open(path, "rb") as model_file:
