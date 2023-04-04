@@ -7,7 +7,7 @@ from sklearn.preprocessing import StandardScaler
 
 import json
 
-#data = read_data(path="data/p7_data.csv")
+#data = read_data(path="../data/p7_data.csv")
 data = read_data()
 features = get_features(data)
 
@@ -16,6 +16,7 @@ data = data[features+ ["SK_ID_CURR", "TARGET"]].copy()
 X = data[features].values
 X_sc = StandardScaler().fit_transform(X)
 
+#model = load_model(path="../data/best_lr_t.pkl")
 model = load_model()
 
 
@@ -40,7 +41,15 @@ def get_score():
 
     return jsonify( json.loads(score.to_json()) )
 
-# Putting ids in dictionary (json file)
+#http://127.0.0.1:5000/features/?n=5
+@app.route("/features/")
+def get_features():
+    n = int(request.args.get('n'))
+    df = pd.DataFrame({"n":range(n)})
+    return jsonify(json.loads(df.to_json()))
+
+
+
 @app.route('/ids/')
 def ids_list():
     # Extract list of all the 'SK_ID_CURR' ids in the X_test dataframe
