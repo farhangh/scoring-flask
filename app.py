@@ -25,7 +25,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return "APP loaded, model and data loaded ..."
+    return "App, model and data loaded ..."
 
 
 # test local : http://127.0.0.1:5000/id_score/?SK_ID_CURR=100700

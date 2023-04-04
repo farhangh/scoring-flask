@@ -3,7 +3,7 @@ import app
 import json
 
 def test_index():
-    assert (app.index() == "APP loaded, model and data loaded ...")
+    assert (app.index() == "App, model and data loaded ...")
 
 @pytest.mark.parametrize("SK_ID_CURR")
 def test_get_score(SK_ID_CURR):
