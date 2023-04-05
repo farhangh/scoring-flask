@@ -8,8 +8,8 @@ test_data = [
     ("204", {'0': -1}),
 ]
 
-#def test_index():
-#    assert (app.index() == "App, model and data loaded ...")
+def test_index():
+    assert (app.index() == "App, model and data loaded ...")
 
 @pytest.mark.parametrize("SK_ID_CURR, expected", test_data)
 def test_get_score(SK_ID_CURR, expected):
