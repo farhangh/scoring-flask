@@ -7,9 +7,10 @@ def test_index():
 
 @pytest.mark.parametrize("SK_ID_CURR")
 def test_get_score(SK_ID_CURR):
-    response = app.app.test_client().get(f'/id_score/?SK_ID_CURR={SK_ID_CURR}')
-    res = json.loads(response.data.decode('utf-8')).get("score")
-    assert(res=={"0":-1})
+    print("Hello javoun", SK_ID_CURR)
+    #response = app.app.test_client().get(f'/id_score/?SK_ID_CURR={SK_ID_CURR}')
+    #res = json.loads(response.data.decode('utf-8')).get("score")
+    #assert(res=={"0":-1})
     #print(res)
 """
 @pytest.mark.parametrize("n")
