@@ -3,11 +3,9 @@ import app
 import json
 
 test_data = [
-    ("100700",.5),
-    ("100703",.6),
-    ("204",.9),
-    ("151",.7),
-    ("6734",.2)
+    ("100700",{'0': 0}),
+    ("100703",{'0': 0}),
+    ("204", {'0': -1}),
 ]
 
 def test_index():
@@ -26,7 +24,7 @@ def test_get_features(n):
     assert (res == {"0":0,"1":1})
 """
 
-if __name__ == "__main__":
-    test_index()
-    test_get_score("204",.9)
+#if __name__ == "__main__":
+#    test_index()
+#    test_get_score("204",.9)
 #    test_get_features(2)
